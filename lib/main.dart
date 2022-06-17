@@ -1,3 +1,4 @@
+import 'package:familiarization/screens/bmi_screen.dart';
 import 'package:familiarization/screens/intro_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,11 @@ class FlutterFitnessApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.green),
-      home: const IntroScreen(),
+      routes: {
+        '/': (context) => const IntroScreen(),
+        '/bmi':(context) => const BmiScreen()
+      },
+      initialRoute: '/',
     );
   }
 }

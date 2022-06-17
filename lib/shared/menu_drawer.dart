@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../screens/bmi_screen.dart';
+import '../screens/intro_screen.dart';
 
 class MenuDrawer extends StatelessWidget {
   const MenuDrawer({Key? key}) : super(key: key);
@@ -18,7 +20,8 @@ class MenuDrawer extends StatelessWidget {
         decoration: BoxDecoration(color: Colors.lightGreen),
         child: Text(
           'Flutter Fitness App',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 30),
+          style: TextStyle(
+              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 30),
         )));
     for (var element in menuTitles) {
       menuItems.add(ListTile(
@@ -26,7 +29,17 @@ class MenuDrawer extends StatelessWidget {
           element,
           style: const TextStyle(fontSize: 19),
         ),
-        onTap: () {},
+        onTap: () {
+          switch (element) {
+            case 'Home':
+              Navigator.pushNamed(context, '/');
+              break;
+            case 'BMI Calculator':
+              Navigator.pushNamed(context, '/bmi');
+              break;
+            default:
+          }
+        },
       ));
     }
 

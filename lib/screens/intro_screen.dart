@@ -1,3 +1,4 @@
+import 'package:familiarization/shared/bottom_nav.dart';
 import 'package:familiarization/shared/menu_drawer.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +10,7 @@ class IntroScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Fitness App')),
       drawer: const MenuDrawer(),
+      bottomNavigationBar: const BottomNav(),
       body: Container(
           decoration: const BoxDecoration(
               image: DecorationImage(

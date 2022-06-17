@@ -5,9 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "familiarization",
+            "name": "Launch on web",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "args": [
+                "-d",
+                "chrome"
+            ]
         },
         {
             "name": "familiarization (profile mode)",

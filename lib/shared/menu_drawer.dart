@@ -35,6 +35,9 @@ class MenuDrawer extends StatelessWidget {
             case 'BMI Calculator':
               Navigator.pushNamed(context, '/bmi');
               break;
+            case 'Weather':
+              Navigator.pushNamed(context, '/weather');
+              break;
             default:
           }
         },

@@ -1,5 +1,6 @@
 import 'package:familiarization/screens/bmi_screen.dart';
 import 'package:familiarization/screens/intro_screen.dart';
+import 'package:familiarization/screens/weather_screen.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
@@ -15,7 +16,8 @@ class FlutterFitnessApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.green),
       routes: {
         '/': (context) => const IntroScreen(),
-        '/bmi':(context) => const BmiScreen()
+        '/bmi':(context) => const BmiScreen(),
+        '/weather':(context) => const WeatherPage()
       },
       initialRoute: '/',
     );

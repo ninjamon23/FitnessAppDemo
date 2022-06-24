@@ -13,7 +13,7 @@ class HttpHelper{
     };
 
     var uri = Uri.https(authority, path, parameters);
-    var result = await http.get(uri);
+    var result = await http.get(uri, headers: {'X-Requested-With': 'XMLHttpRequest'});
 
     return result.body;
   }

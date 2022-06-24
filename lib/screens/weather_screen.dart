@@ -31,8 +31,23 @@ class _WeatherPageState extends State<WeatherPage> {
   Future getWeatherByLocation() async {
     var helper = HttpHelper();
     result = await helper.getWeather('London');
-    setState(() {
-      
-    });
+    setState(() {});
+  }
+
+  void showModal() {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('title'),
+        content: const Text('content body'),
+        actions: [
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text('Go Back'))
+        ],
+      ),
+    );
   }
 }

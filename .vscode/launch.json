@@ -16,6 +16,15 @@
             ]
         },
         {
+            "name": "Launch on windows",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "-d",
+                "windows",
+            ]
+        },
+        {
             "name": "familiarization (profile mode)",
             "request": "launch",
             "type": "dart",

@@ -1,6 +1,9 @@
 import 'package:familiarization/shared/bottom_nav.dart';
 import 'package:familiarization/shared/menu_drawer.dart';
 import 'package:flutter/material.dart';
+import 'package:vxstate/vxstate.dart';
+
+import '../main.dart';
 
 class BmiScreen extends StatefulWidget {
   const BmiScreen({Key? key}) : super(key: key);
@@ -10,8 +13,27 @@ class BmiScreen extends StatefulWidget {
 }
 
 class _BmiScreenState extends State<BmiScreen> {
+  String result = '';
+  bool isMetric = false;
+  bool isImperial = false;
+  double? height;
+  double? weight;
+  String heightMessage = '';
+  String weightMessage = '';
+
+  late List<bool> isSelected;
+
+  final TextEditingController txtHeight = TextEditingController();
+  final TextEditingController txtWeight = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    // Define when this widget should re render
+    VxState.watch(context, on: [Increment, Decrement]);
+    // VxState.listen(context, to: [Increment]);
+
+    // Get access to the store
+    AppStore store = VxState.store;
+
     heightMessage =
         'Please enter your height in ${isMetric ? 'meters' : 'inches'}';
     weightMessage =
@@ -69,24 +91,37 @@ class _BmiScreenState extends State<BmiScreen> {
                   style: TextStyle(fontSize: 18),
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Increment();
+                    print('Count from store is ${store.count}');
+                  },
+                  child: const Text(
+                    'Increase Counter from VxState',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Decrement();
+                    print('Count from store is ${store.count}');
+                  },
+                  child: const Text(
+                    'Decrease Counter from VxState',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+              ),
               Text(result)
             ],
           ),
         ));
   }
-
-  String result = '';
-  bool isMetric = false;
-  bool isImperial = false;
-  double? height;
-  double? weight;
-  String heightMessage = '';
-  String weightMessage = '';
-
-  late List<bool> isSelected;
-
-  final TextEditingController txtHeight = TextEditingController();
-  final TextEditingController txtWeight = TextEditingController();
 
   void toggleMeasure(value) {
     isMetric = false;

@@ -1,4 +1,5 @@
 import 'package:familiarization/screens/bmi_screen.dart';
+import 'package:familiarization/screens/callback_function_demo.dart';
 import 'package:familiarization/screens/intro_screen.dart';
 import 'package:familiarization/screens/weather_screen.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,8 @@ class FlutterFitnessApp extends StatelessWidget {
       routes: {
         '/': (context) => const IntroScreen(),
         '/bmi': (context) => const BmiScreen(),
-        '/weather': (context) => const WeatherPage()
+        '/weather': (context) => const WeatherPage(),
+        '/callback': (context) => const Quotes()
       },
       initialRoute: '/',
     );

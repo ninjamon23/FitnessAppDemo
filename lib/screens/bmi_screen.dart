@@ -32,7 +32,6 @@ class _BmiScreenState extends State<BmiScreen> {
     // VxState.listen(context, to: [Increment]);
 
     // Get access to the store
-    AppStore store = VxState.store;
 
     heightMessage =
         'Please enter your height in ${isMetric ? 'meters' : 'inches'}';
@@ -96,7 +95,7 @@ class _BmiScreenState extends State<BmiScreen> {
                 child: ElevatedButton(
                   onPressed: () {
                     Increment();
-                    print('Count from store is ${store.count}');
+                    // print('Count from store is ${store.count}');
                   },
                   child: const Text(
                     'Increase Counter from VxState',
@@ -109,7 +108,7 @@ class _BmiScreenState extends State<BmiScreen> {
                 child: ElevatedButton(
                   onPressed: () {
                     Decrement();
-                    print('Count from store is ${store.count}');
+                    // print('Count from store is ${store.count}');
                   },
                   child: const Text(
                     'Decrease Counter from VxState',

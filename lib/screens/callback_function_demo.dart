@@ -45,12 +45,12 @@ class QuoteCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Card(
-                    margin: const EdgeInsets.all(2),
-                    child: Padding(
-                      padding: const EdgeInsets.all(2),
-                      child: Column(children: <Widget>[Text(quote)]),
-                    ),
-                  ),
-    )
+        margin: const EdgeInsets.all(2),
+        child: Padding(
+          padding: const EdgeInsets.all(2),
+          child: Column(children: <Widget>[Text(quote)]),
+        ),
+      ),
+    );
   }
 }
